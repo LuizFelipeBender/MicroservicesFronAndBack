@@ -13,15 +13,11 @@ namespace GeekShopping.Web.Controllers
             _productService = productService ?? throw new ArgumentNullException(nameof(productService));    
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> ProductIndex()
         {
-            return View();
+            var products = await _productService.FindAllProducts();
+            return View(products);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View("Error!");
-        }
     }
 }
