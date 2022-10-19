@@ -2,6 +2,7 @@ using AutoMapper;
 using GeekShopping.ProductAPI.Data;
 using GeekShopping.ProductAPI.DATA_VO.ValueObjects;
 using GeekShopping.ProductAPI.Model;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace GeekShopping.ProductAPI.Repository
@@ -29,14 +30,14 @@ namespace GeekShopping.ProductAPI.Repository
             return _mapper.Map<ProductVO>(product);
         }
 
-        public async Task<ProductVOID> CreateAsync(ProductVOID vo)
+        public async Task<ProductVOID> CreateAsync([FromBody]ProductVOID vo)
         {
             Product product =  _mapper.Map<Product>(vo);
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
             return _mapper.Map<ProductVOID>(product);
         }
-        public async Task<ProductVO> UpdateAsync(ProductVO vo)
+        public async Task<ProductVO> UpdateAsync([FromBody]ProductVO vo)
         {
             Product product =  _mapper.Map<Product>(vo);
             _context.Products.Update(product);
