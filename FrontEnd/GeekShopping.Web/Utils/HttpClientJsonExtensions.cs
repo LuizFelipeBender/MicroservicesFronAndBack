@@ -19,7 +19,6 @@ namespace GeekShopping.Web.Utils
                 new JsonSerializerOptions
                 {PropertyNameCaseInsensitive = true});
         }
-
         public static Task<HttpResponseMessage> PostAsJson<T>(
             this HttpClient httpClient,
             string url,

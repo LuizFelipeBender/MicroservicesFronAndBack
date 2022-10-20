@@ -33,7 +33,7 @@ namespace GeekShopping.ProductAPI.Controllers
 
         [HttpPost]
 
-        public async Task<ActionResult<ProductVOID>> Create([FromQuery]ProductVOID productVO)
+        public async Task<ActionResult<ProductVO>> Create([FromQuery]ProductVO productVO)
         {
             if (productVO == null) return BadRequest();
             var product = await _repository.CreateAsync(productVO);
@@ -56,7 +56,5 @@ namespace GeekShopping.ProductAPI.Controllers
             if (!status) return BadRequest();
             return Ok("Produto excluido");
         }
-
-    
     }
 }

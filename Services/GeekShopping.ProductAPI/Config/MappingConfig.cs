@@ -10,8 +10,8 @@ namespace GeekShopping.ProductAPI.Config
         {
             var mappingConfig = new MapperConfiguration(config => {
                 config.CreateMap<ProductVO,Product>().ReverseMap();
-                config.CreateMap<ProductVOID,Product>().ReverseMap();
-                config.CreateMap<ProductVOID,ProductVO>().ReverseMap();
+                config.CreateMap<ProductVO,Product>().ReverseMap();
+                config.CreateMap<ProductVO,ProductVO>().ReverseMap();
                 
             });
             return mappingConfig;

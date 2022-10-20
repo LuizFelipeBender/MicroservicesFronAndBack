@@ -8,7 +8,7 @@ namespace GeekShopping.ProductAPI.Repository
 
       Task<ProductVO> FindByIdAsync(uint id);  
 
-      Task<ProductVOID> CreateAsync(ProductVOID vo);
+      Task<ProductVO> CreateAsync(ProductVO vo);
 
       Task<ProductVO> UpdateAsync(ProductVO vo);
 
